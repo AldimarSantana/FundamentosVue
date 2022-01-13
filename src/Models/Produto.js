@@ -1,5 +1,8 @@
-export default class Produto{
-    constructor(obj){
+
+
+export default class Produto {
+    
+    constructor(obj) {
         obj = obj || {};
         
         this.id = obj.id;
