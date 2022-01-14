@@ -49,9 +49,9 @@
 
 <script>
 import Button from '../components/button/Button.vue';
-//import produtoService from '../services/produto-service';
-//import Produto from "../models/Produto";
-import axios from "axios";
+import produtoService from '../services/produto-service';
+import Produto from "../models/Produto";
+//import axios from "axios";
 
 export default {
     name: "ControleDeProdutos",
@@ -66,33 +66,22 @@ export default {
     },
 
     methods:{
-      // obterTodosOsProdutos(){
+      obterTodosOsProdutos(){
 
-      //   produtoService.obterTodos()
-      //   .then(response => {
-      //     this.produtos = response.data.map(p =>  new Produto(p));
-      //     console.log(this.produtos);
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //   })
-      // }
-
-        obterTodosOsProdutos() {
-          axios
-          .get('http://localhost:3000/produtos')
-          .then((response) => {
-           this.produtos = response.data;
+        produtoService.obterTodos()
+        .then(response => {
+          this.produtos = response.data.map(p =>  new Produto(p));
+          console.log(this.produtos);
         })
-        .catch((error) => {
-           console.log(error);
-        });
-    },
+        .catch(error => {
+          console.log(error);
+        })
+      }
   },
     
   mounted(){
     this.obterTodosOsProdutos();
-  }
+  },
 };
 
 </script>
