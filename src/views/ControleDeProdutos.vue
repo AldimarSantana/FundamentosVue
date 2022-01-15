@@ -11,13 +11,13 @@
 
     <div class="row sub-container">
       <div class="col-sm-4">
-        <Button value="Adicionar"></Button>
+        <Button :callback="adicionarProduto" value="Adicionar"></Button>
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-12">
-        <table class="table">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>Código</th>
@@ -30,13 +30,14 @@
           </thead>
           <tbody>
               <tr v-for="item in produtos" :key="item.id"> 
-                  <td> {{item.id}} </td>
-                  <td> {{item.nome}} </td>
-                  <td> {{item.quantidadeEstoque}} </td>
-                  <td> {{item.Valor}} </td>
-                  <td> {{item.dataCadastro}} </td>
+                  <td> {{ item.id }} </td>
+                  <td> {{ item.nome }} </td>
+                  <td> {{ item.quantidadeEstoque }} </td>
+                  <td> {{ item.valor | real }} </td>
+                  <td> {{ item.dataCadastro | formatData }} </td>
 
-                  <td>Editar / Excluir</td>
+                  <td><i @click="editarProduto" class="fas fa-pencil-alt icones-tabela"></i></td>
+                  <td><i @click="deletarProduto" class="fas fa-trash-alt icones-tabela"></i></td>
               </tr>
           </tbody>
 
@@ -51,14 +52,25 @@
 import Button from '../components/button/Button.vue';
 import produtoService from '../services/produto-service';
 import Produto from "../models/Produto";
-//import axios from "axios";
+import conversorData from '../utils/conversor-data';
+import conversorMoeda from '../utils/conversor-moeda'
 
 export default {
     name: "ControleDeProdutos",
     components:{
-      Button
-      
+      Button,
     },
+
+    filters:{
+      formatData(data){
+        return conversorData.aplicarMascaraDataHoraEmDataIso(data);
+      },
+
+      real(valor){
+        return conversorMoeda.aplicarMascaraParaRealComPrefixo(valor);
+      }
+    },
+
     data(){
       return{
         produtos: []
@@ -66,6 +78,20 @@ export default {
     },
 
     methods:{
+
+      adicionarProduto(){
+        this.$router.push({name:"NovoProduto" })
+      },
+
+       editarProduto(){
+        alert('Editar um produto')
+      },
+
+       deletarProduto(){
+        alert('Deletar um produto')
+      },
+
+
       obterTodosOsProdutos(){
 
         produtoService.obterTodos()
@@ -87,5 +113,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .icones-tabela{
+    margin: 5px;
+    cursor: pointer;
+    color: var(--cor-primaria);
+  }
 </style>

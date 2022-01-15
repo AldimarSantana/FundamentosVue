@@ -3,6 +3,7 @@ import Login from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 import ControleDeProdutos from '@/views/ControleDeProdutos.vue';
 import ControleDeClientes from '@/views/ControleDeClientes.vue';
+import Produto from '@/views/Produto.vue';
 
 const routes = [
     {
@@ -22,6 +23,15 @@ const routes = [
       },
 
       {
+        path: '/controle-de-clientes',
+        name: 'ControleDeClientes',
+        component: ControleDeClientes,
+        title: 'Clientes',
+        meta: { requiredAuth: true }
+      },
+
+
+      {
         path: '/controle-de-produtos',
         name: 'ControleDeProdutos',
         component: ControleDeProdutos,
@@ -29,11 +39,12 @@ const routes = [
         meta: { requiredAuth: true }
       },
 
+      
       {
-        path: '/controle-de-clientes',
-        name: 'ControleDeClientes',
-        component: ControleDeClientes,
-        title: 'Clientes',
+        path: '/controle-de-produtos/novo',
+        name: 'NovoProduto',
+        component: Produto,
+        title: 'Adicionar produto',
         meta: { requiredAuth: true }
       }
     

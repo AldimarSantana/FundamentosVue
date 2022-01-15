@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <Menu v-if="this.$router.currentRoute.name!='Login'"></Menu>
     <router-view/>
   </div>
@@ -51,6 +47,33 @@ export default {
 
   .sub-container{
     margin-top: 15px;
+  }
+
+  .titulo{
+    font-weight: 600;
+    color: #363636;
+    font-size: 25px;
+    margin-top: 5px;
+  }
+
+  .btn-primary,
+  .btn-primary:active
+  .btn-primary:focus,
+  .btn-primary:focus-visible,
+  .btn-primary:visited,
+  .btn-primary:not(:disabled):not(.dsabled):active{
+    color: #fff;;
+    background-color: var(--cor-primaria);
+    border: var(--cor-primaria);
+    outline: none;
+    box-shadow: none;
+    min-width: 90px;
+  }
+
+  .btn-primary:hover{
+    color: #fff;
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
   }
 
 </style>
