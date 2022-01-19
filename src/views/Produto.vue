@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="titulo">Adicionar produto</h1>
+                <h1 class="titulo">{{ modoCadastro ? "Adicionar" : "Editar"}} produto</h1>
                 <hr/>
             </div>
         </div>
-        <div class="row">
 
+        <div class="row">
             <div class="col-sm-2">
                 <div class="form group">
                     <label for="id">Código</label>
@@ -26,7 +26,7 @@
                     <label for="nome">Nome</label>
                     <input 
                         id="nome" 
-                        v-model="produto.name" 
+                        v-model="produto.nome" 
                         type="text" 
                         class="form-control">
                 </div>
@@ -59,7 +59,7 @@
                  <div class="form group">
                     <label for="data-cadastro">Data cadastro</label>
                     <input 
-                        id="data-cadastro" 
+                        id="dataCadastro" 
                         v-model="produto.dataCadastro"  
                         type="date" 
                         class="form-control">
@@ -84,14 +84,14 @@
             
         <div class="row"> 
             <div class="col-sm-12">
-                <hr />
+                <hr>
             </div>
           
             <div class="col-sm-12">
 
-                <div class="form-check-inline">
+                <div v-show="modoCadastro" class="form-check-inline">
                     <label class="class-form-check-label">
-                        <input type="checkbox" class="form-check-input" value="" />
+                        <input v-model="continuarAdicionando" type="checkbox" class="form-check-input" />
                             Continuar adicionando
                     </label>
                 </div>
@@ -105,6 +105,8 @@
 <script>
 
 import Produto from '../models/Produto';
+import produtoService from '../services/produto-service'
+import conversorData from '../utils/conversor-data';
 
     export default {
 
@@ -113,17 +115,81 @@ import Produto from '../models/Produto';
         data(){
             return{
                 produto: new Produto(),
+                modoCadastro: true,
+                continuarAdicionando: false,
             }
         },
 
+        mounted(){
+            let id = this.$route.params.id
+            if(!id) return;
+
+            this.modoCadastro = false;
+            this.obterProdutoPorId(id);
+        },
+
         methods:{
+
+           obterProdutoPorId(id) {
+               produtoService.obterPorId(id)
+               .then(response => {
+
+                   this.produto = new Produto(response.data);
+               })
+               .catch(error =>{
+                   console.log(error)
+               })
+           },     
+
             cancelarAcao(){
                 this.produto = new Produto();
                 this.$router.push({name: "ControleDeProdutos"})
             },
 
-            salvarProduto(){
+            cadastrarProduto(){
+                if(!this.produto.modeloValidoParaCadastro()){
+                    alert("Nome obrigatório");
+                    return;
+                }
 
+                this.produto.dataCadastro = 
+                    conversorData.aplicarMascaraIsoEmFormatoAmericano(this.produto.dataCadastro)
+
+                produtoService.cadastrar(this.produto)
+                .then(() => {
+                   alert("Produto cadastrado com sucesso!");
+                   this.produto = new Produto();
+
+                   if(!this.continuarAdicionando){
+                       this.$router.push({name: "ControleDeProdutos"});
+                   }
+               })
+               .catch(error =>{
+                   console.log(error)
+               });
+            },
+
+            atualizarProduto(){
+                if(!this.produto.modeloValidoParaAtualizar()){
+                    alert("O código e nome são obrigatórios");
+                    return;
+                }
+
+                this.produto.dataCadastro = 
+                    conversorData.aplicarMascaraIsoEmFormatoAmericano(this.produto.dataCadastro)
+
+                produtoService.atualizar(this.produto)
+                .then(() =>{
+                    alert("Produto atualizado com sucesso.");
+                    this.$router.push({name: "ControleDeProdutos"});
+                })
+                .catch(error =>{
+                   console.log(error)
+               });
+            },
+
+            salvarProduto(){
+                (this.modoCadastro) ? this.cadastrarProduto() : this.atualizarProduto();
             }
         }
     };

@@ -36,8 +36,8 @@
                   <td> {{ item.valor | real }} </td>
                   <td> {{ item.dataCadastro | formatData }} </td>
 
-                  <td><i @click="editarProduto" class="fas fa-pencil-alt icones-tabela"></i></td>
-                  <td><i @click="deletarProduto" class="fas fa-trash-alt icones-tabela"></i></td>
+                  <td><i @click="editarProduto(item)" class="fas fa-pencil-alt icones-tabela"></i></td>
+                  <td><i @click="deletarProduto(item)" class="fas fa-trash-alt icones-tabela"></i></td>
               </tr>
           </tbody>
 
@@ -63,7 +63,7 @@ export default {
 
     filters:{
       formatData(data){
-        return conversorData.aplicarMascaraDataHoraEmDataIso(data);
+        return conversorData.aplicarMascaraEmDataIso(data);
       },
 
       real(valor){
@@ -80,11 +80,11 @@ export default {
     methods:{
 
       adicionarProduto(){
-        this.$router.push({name:"NovoProduto" })
+        this.$router.push({name:"/NovoProduto"})
       },
 
-       editarProduto(){
-        alert('Editar um produto')
+       editarProduto(produto){
+        this.$router.push({name:"EditarProduto", params: {id: produto.id }})
       },
 
        deletarProduto(){
@@ -93,7 +93,6 @@ export default {
 
 
       obterTodosOsProdutos(){
-
         produtoService.obterTodos()
         .then(response => {
           this.produtos = response.data.map(p =>  new Produto(p));

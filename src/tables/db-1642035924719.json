@@ -1,25 +1,32 @@
 {
-  "produtos": [
-    {
-      "id": "1",
-      "nome": "produto 1",
-      "valor": 50,
-      "quantidadeEstoque": 10,
-      "dataCadastro": "2021-01-10 14:26:59"
-    },
-    {
-      "id": "2",
-      "nome": "produto 2",
-      "valor": 100,
-      "quantidadeEstoque": 20,
-      "dataCadastro": "2021-01-12 16:31:42"
-    },
-    {
-      "id": "3",
-      "nome": "produto 3",
-      "valor": 150,
-      "quantidadeEstoque": 30,
-      "dataCadastro": "2021-01-12 19:07:38"
-    }
+  "produtos" : [
+     {
+        "id": "1",
+        "nome": "produto 1",
+        "quantidadeEstoque": 10,
+        "valor": 50.00,
+        "dataCadastro": "2021-01-10"
+     },
+     {
+        "id": "2",
+        "nome": "produto 2",
+        "quantidadeEstoque": 20,
+        "valor": 100.00,
+        "dataCadastro": "2021-01-12"
+     },
+     {
+        "id": "3",
+        "nome": "produto 3",
+        "quantidadeEstoque": 30,
+        "valor": 150.00,
+        "dataCadastro": "2021-01-12"
+     },
+     {
+        "id": "4",
+        "nome": "produto 4",
+        "quantidadeEstoque": 45,
+        "valor": 200.00,
+        "dataCadastro": "2021-01-14"
+     }
   ]
 }

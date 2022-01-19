@@ -42,11 +42,19 @@ const routes = [
       
       {
         path: '/controle-de-produtos/novo',
-        name: 'NovoProduto',
+        name: '/NovoProduto',
         component: Produto,
         title: 'Adicionar produto',
         meta: { requiredAuth: true }
-      }
+      },
+
+      {
+        path: '/controle-de-produtos/editar',
+        name: 'EditarProduto',
+        component: Produto,
+        title: 'Editar produto',
+        meta: { requiredAuth: true }
+      },
     
   ];
 
