@@ -87,16 +87,32 @@ export default {
         this.$router.push({name:"EditarProduto", params: {id: produto.id }})
       },
 
-       deletarProduto(){
-        alert('Deletar um produto')
+       deletarProduto(produto){
+         if(confirm(`Deseja excluir o produto "${produto.id} - ${produto.nome}"`)){
+           produtoService.deletar(produto.id)
+           .then(() => {
+              
+              let indice = this.produtos.findIndex(p => p.id == produto.id);
+              this.produtos.splice(indice, 1);
+
+              setTimeout(() => {
+                alert('Produto exckuído com sucesso')
+              }, 200);
+              
+           }) 
+           .catch(error =>{
+             console.log(error);
+           });
+         }
       },
 
-
+     
       obterTodosOsProdutos(){
         produtoService.obterTodos()
         .then(response => {
-          this.produtos = response.data.map(p =>  new Produto(p));
-          console.log(this.produtos);
+          let produtos = response.data.map(p =>  new Produto(p));
+          
+          this.produtos = produtos.sort(produtos.Valor).reverse();
         })
         .catch(error => {
           console.log(error);

@@ -1,68 +1,76 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "nome": "produto 1",
-      "quantidadeEstoque": 10,
-      "valor": 50,
-      "dataCadastro": "2021-01-11T00:00:00",
-      "observacao": ""
-    },
-    {
-      "id": "2",
-      "nome": "produto 2",
-      "quantidadeEstoque": 20,
-      "valor": 100,
-      "dataCadastro": "2021-01-14T00:00:00",
-      "observacao": ""
-    },
-    {
-      "id": "3",
-      "nome": "produto 3",
-      "quantidadeEstoque": 30,
-      "valor": 150,
-      "dataCadastro": "2021-01-12",
-      "observacao": "Nova obs"
-    },
-    {
-      "id": "4",
-      "nome": "produto 4",
-      "quantidadeEstoque": 45,
-      "valor": 200,
-      "dataCadastro": "2021-01-14",
-      "observacao": ""
-    },
-    {
+      "id": "mbdjy2Y",
+      "nome": "Bermuda",
       "quantidadeEstoque": "10",
       "valor": "150",
-      "dataCadastro": "2022-01-18",
-      "name": "Camiseta",
-      "id": "mbdjy2Y",
+      "dataCadastro": "2022-01-18T00:00:00",
       "observacao": ""
     },
     {
-      "nome": "Sapatenis",
+      "nome": "produto para excluir 2",
+      "quantidadeEstoque": "20",
+      "valor": "30",
+      "dataCadastro": "2022-01-27T00:00:00",
+      "observacao": "teste",
+      "id": "vPqyCbZ"
+    },
+    {
+      "nome": "Teste 1",
+      "quantidadeEstoque": "10",
+      "valor": "20",
+      "dataCadastro": "2022-01-27T00:00:00",
+      "observacao": "Teste",
+      "id": "GzdzXYK"
+    },
+    {
+      "nome": "Teste 2",
+      "quantidadeEstoque": "20",
+      "valor": "62",
+      "dataCadastro": "2022-01-27T00:00:00",
+      "observacao": "Teste",
+      "id": "DpU_xaV"
+    },
+    {
+      "nome": "Produto 6",
+      "quantidadeEstoque": "79",
+      "valor": "43",
+      "dataCadastro": "2022-01-25T00:00:00",
+      "observacao": "teste",
+      "id": "LA6ry1f"
+    },
+    {
+      "nome": "Novo produto",
       "quantidadeEstoque": "15",
-      "valor": "169",
-      "dataCadastro": "2022-01-17",
-      "id": "TmNKpeS",
-      "observacao": ""
+      "valor": "26",
+      "dataCadastro": "2022-01-27T00:00:00",
+      "observacao": "teste",
+      "id": "hWT_daf"
     },
     {
-      "id": "oMglaW-",
-      "nome": "Cinto couro",
-      "quantidadeEstoque": "23",
-      "valor": "59",
-      "dataCadastro": "2022-01-17",
-      "observacao": "teste "
+      "nome": "Mais um produto",
+      "quantidadeEstoque": "30",
+      "valor": "85",
+      "dataCadastro": "2022-01-28T00:00:00",
+      "observacao": "Teste",
+      "id": "0SEHdxm"
     },
     {
-      "nome": "Fone",
+      "nome": "teste 6",
+      "quantidadeEstoque": "10",
+      "valor": "20",
+      "dataCadastro": "2022-01-28T00:00:00",
+      "observacao": "teste",
+      "id": "y6o-viu"
+    },
+    {
+      "id": "4UKlslx",
+      "nome": "TEste 10",
       "quantidadeEstoque": "6",
-      "valor": "140",
-      "dataCadastro": "2022-01-14",
-      "id": "AS2QAAh",
-      "observacao": "teste 2"
+      "valor": "41",
+      "dataCadastro": "2022-01-25T00:00:00",
+      "observacao": "teste testes"
     }
   ]
 }
