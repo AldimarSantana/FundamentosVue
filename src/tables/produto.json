@@ -39,38 +39,6 @@
       "dataCadastro": "2022-01-25T00:00:00",
       "observacao": "teste",
       "id": "LA6ry1f"
-    },
-    {
-      "nome": "Novo produto",
-      "quantidadeEstoque": "15",
-      "valor": "26",
-      "dataCadastro": "2022-01-27T00:00:00",
-      "observacao": "teste",
-      "id": "hWT_daf"
-    },
-    {
-      "nome": "Mais um produto",
-      "quantidadeEstoque": "30",
-      "valor": "85",
-      "dataCadastro": "2022-01-28T00:00:00",
-      "observacao": "Teste",
-      "id": "0SEHdxm"
-    },
-    {
-      "nome": "teste 6",
-      "quantidadeEstoque": "10",
-      "valor": "20",
-      "dataCadastro": "2022-01-28T00:00:00",
-      "observacao": "teste",
-      "id": "y6o-viu"
-    },
-    {
-      "id": "4UKlslx",
-      "nome": "TEste 10",
-      "quantidadeEstoque": "6",
-      "valor": "41",
-      "dataCadastro": "2022-01-25T00:00:00",
-      "observacao": "teste testes"
     }
   ]
 }

@@ -147,7 +147,13 @@ export default {
           this.produto = new Produto(response.data);
         })
         .catch((error) => {
-          console.log(error);
+            console.log(error);
+            this.$swal({
+                icon: "error",
+                title: `Não foi possivel obter o produto pelo id ${id}`,
+                confirmButtonColor: "#FF3D00",
+                animate: true,
+            });
         });
     },
 
@@ -164,7 +170,6 @@ export default {
           confirmButtonColor: "#FF3D00",
           animate: true,
         });
-
         return;
       }
 
@@ -190,7 +195,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+            console.log(error);
+            this.$swal({
+                icon: "error",
+                title: "Não foi possivel cadastrar o produto",
+                confirmButtonColor: "#FF3D00",
+                animate: true,
+            });
         });
     },
 
@@ -224,15 +235,13 @@ export default {
           this.$router.push({ name: "ControleDeProdutos" });
         })
         .catch((error) => {
-          console.log(error);
-
-          this.$swal({
-            icon: "error",
-            title: "Não foi possivel atualizar o produto",
-            confirmButtonColor: "#FF3D00",
-            animate: true,
-
-          });
+            console.log(error);
+            this.$swal({
+                icon: "error",
+                title: "Não foi possivel atualizar o produto",
+                confirmButtonColor: "#FF3D00",
+                animate: true,
+            });
         });
     },
 
