@@ -11,6 +11,9 @@
       <div class="col-sm-4">
         <Button :callback="adicionarProduto" value="Adicionar"></Button>
       </div>
+      <div class="col-sm-12">
+        <a @click="verProdutosEmCards" class="float-right ver-em-cards">Ver em Cards</a>
+      </div>
     </div>
 
     <div class="row">
@@ -84,6 +87,11 @@ export default {
   },
 
   methods: {
+
+    verProdutosEmCards(){
+      this.$router.push({name: "ListaProdutoCards"});
+    },
+
     adicionarProduto() {
       this.$router.push({ name: "/NovoProduto" });
     },
@@ -147,9 +155,16 @@ export default {
 </script>
 
 <style scoped>
-.icones-tabela {
+.icones-tabela,
+.ver-em-cards {
   margin: 5px;
   cursor: pointer;
   color: var(--cor-primaria);
 }
+
+.ver-em-cards{
+  margin-top: 25px;
+}
+
+
 </style>
