@@ -1,44 +1,36 @@
 {
   "produtos": [
     {
-      "id": "mbdjy2Y",
-      "nome": "Bermuda",
-      "quantidadeEstoque": "10",
-      "valor": "150",
-      "dataCadastro": "2022-01-18T00:00:00",
-      "observacao": ""
-    },
-    {
-      "nome": "produto para excluir 2",
+      "id": "vPqyCbZ",
+      "nome": "Contra baixo music man",
       "quantidadeEstoque": "20",
       "valor": "30",
       "dataCadastro": "2022-01-27T00:00:00",
-      "observacao": "teste",
-      "id": "vPqyCbZ"
+      "observacao": "teste"
     },
     {
+      "id": "GzdzXYK",
       "nome": "Teste 1",
       "quantidadeEstoque": "10",
       "valor": "20",
       "dataCadastro": "2022-01-27T00:00:00",
-      "observacao": "Teste",
-      "id": "GzdzXYK"
+      "observacao": "Teste"
     },
     {
+      "id": "DpU_xaV",
       "nome": "Teste 2",
       "quantidadeEstoque": "20",
       "valor": "62",
       "dataCadastro": "2022-01-27T00:00:00",
-      "observacao": "Teste",
-      "id": "DpU_xaV"
+      "observacao": "Teste"
     },
     {
+      "id": "LA6ry1f",
       "nome": "Produto 6",
       "quantidadeEstoque": "79",
       "valor": "43",
       "dataCadastro": "2022-01-25T00:00:00",
-      "observacao": "teste",
-      "id": "LA6ry1f"
+      "observacao": "teste"
     }
   ]
 }

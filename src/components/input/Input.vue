@@ -1,23 +1,21 @@
 <template>
     <div>
-        <label for="">{{ label}}</label> <br>
+        <label for="">{{ label }}</label> <br>
         <input :placeholder="placeHolder" :type="type">
     </div>
 </template>
 
 <script>
 
-
 export default {
    name: "Input",
-   props:{
+   props: {
        label: {type: String, require},
        placeHolder: {type: String},
        type:{type: String, default: 'text'}
    },
    data(){
        return{
-           
        }
    }
 }

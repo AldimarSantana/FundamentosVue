@@ -7,40 +7,46 @@
       </div>
     </div>
     <div class="row mt-3">
-      <Card>
-        <template v-slot:nome> Produto B </template>
+        <div v-for="produto in produtos" :key="produto.id">
+            
+            <Card>
+                <template v-slot:nome>{{ produto.nome }} </template>
+                <template v-slot:valor> {{ produto.valor | real }}</template>
+                <template v-slot:observacao> {{ produto.observacao }} </template>
+                <template v-slot:acoes>
+                    <i
+                        @click="editarProduto(produto)"
+                        class="fas fa-pencil-alt icones-tabela">
+                    </i>
 
-        <template v-slot:valor> R$ 200,00 </template>
-
-        <template v-slot:observacao> Produto top de linha </template>
-
-        <template v-slot:acoes>
-          <i
-            @click="editarProduto(item)"
-            class="fas fa-pencil-alt icones-tabela"
-          ></i>
-
-          <i
-            @click="deletarProduto(item)"
-            class="fas fa-trash-alt icones-tabela"
-          ></i>
-        </template>
-      </Card>
+                    <i
+                        @click="deletarProduto(produto)"
+                        class="fas fa-trash-alt icones-tabela">
+                    </i>
+                </template>
+            </Card>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 import Card from "../components/card/Card.vue";
+import ProdutoMixin from '../mixins/produto-mixin';
 
 export default {
   name: "ListaProdutodCards",
+  mixins:[ProdutoMixin],
   components: {
     Card,
   },
 
-  data() {},
+  data() {
+      return {};
+  },
 
   methods: {},
+
+
 };
 </script>

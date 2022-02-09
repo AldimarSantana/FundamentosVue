@@ -1,6 +1,6 @@
 <template>
     <div class="Card">
-        <img src="https://gmedia.playstation.com/is/image/SIEPDC/console-left_@1x?fmt=png-alpha&scl=1"
+        <img src="https://cdn.iset.io/assets/54224/produtos/1728/thumb_250-250-9975197747-baixo-sterling-by-music-man-sub-ray-4-mint-green-4-cordas-2.jpg"
         alt=""
         />
 
@@ -25,11 +25,9 @@
 
 <script>
 export default {
-    name:"Card",
+    name: "Card",
     data() {
-        return{
-
-        }
+        return{}
     },
 
     methods:{}
@@ -37,9 +35,9 @@ export default {
 </script>
 <style scoped>
     .card{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-        max-width: 300px;
-        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+        max-width: 270;
+        margin: 5px;
         margin-bottom: 15px;
         text-align: center;
         padding: 10px;
